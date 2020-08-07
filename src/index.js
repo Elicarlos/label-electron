@@ -29,6 +29,16 @@ const createWindow = () => {
       height: 600
     });
 
+    {
+      filters: [
+        { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
+        { name: 'Movies', extensions: ['mkv', 'avi', 'mp4'] },
+        { name: 'Custom File Type', extensions: ['as'] },
+        { name: 'All Files', extensions: ['*'] }
+      ]
+    }
+    
+
     cadastroCliente.loadFile(path.join(__dirname, 'cadastro-produto.html'));
     
 
