@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Print ZPL from browser</title>
+</head>
+<body>
+  <h1>Test page for print ZPL from browser!</h1>
+
+  <script type="text/javascript">
+    function printZpl(zpl) {
+      var printWindow = window.open();
+      printWindow.document.open('text/plain')
+      printWindow.document.write(zpl);
+      printWindow.document.close();
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }
+  </script>
+
+</body>
+
+<input type="button" value="Print zpl" onclick="printZpl(document.getElementById('zplcode').value)" /><br/>
+<textarea id="zplcode" cols="40" rows="20">^XA        
+^FXTest ZPL^FS
+^FO50,100
+^A0N,89^FDHello ZPL^FS
+^XZ
+</textarea>
+
+<p>Use the build in windows [Generic / Text Only] driver for your Zebra printer. Instead of the zebra driver. </p>
+
+<p>Tested in: <b>Edge, Internet Explorer, Firefox</b></p>
+
+<p>Not working in: Chrome (Chrome prints as image and not in text)</p>
+
+</html>

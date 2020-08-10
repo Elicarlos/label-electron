@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="file" name="file" id="file">
+
+
+
+    <script>
+       document.getElementById('file').onchange = function(){
+
+    var file = this.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function(progressEvent){
+    // Entire file
+    
+    
+    var re = /(\w+)\s(\w+)/;
+var str = "Elicarlos Ferreira";
+var newstr = str.replace(re, "$1 $2");
+console.log(newstr);
+    //console.log("Este é o arquivo " + this.result);
+
+    /* // By lines
+    var lines = this.result.split('\n');
+    for(var line = 0; line < lines.length; line++){
+    console.log(lines[line]);
+    } */
+};
+reader.readAsText(file);
+};
+
+    
+
+
+João da Silva;Rua Cabloco terceiro, 25;11111-111;(99)9999-9999
+Márcio Cunha;Rua João Gourlat, 150;12123111;(99)8888-9999
+
+
+
+    </script>
+</body>
+</html>
